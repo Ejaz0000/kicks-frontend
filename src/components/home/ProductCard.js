@@ -6,27 +6,27 @@ import { formatPrice } from '@/lib/utils';
 export default function ProductCard({ product, showBadge = false }) {
   return (
     <Link href={`/product/${product.slug}`} className="group block">
-      <div className="bg-gray-100 rounded-2xl p-4 relative overflow-hidden transition-shadow hover:shadow-lg">
+      <div className="bg-[#FAFAFA] rounded-[28px] p-2 relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
         {showBadge && (
-          <Badge className="absolute top-3 left-3 z-10 bg-blue-600 text-white">
+          <div className="absolute top-0 left-0 z-10 bg-[#4A69E2] text-white text-[12px] font-bold px-4 py-3 rounded-tl-[26px] rounded-br-[16px] border-none shadow-sm shadow-blue-900/10">
             New
-          </Badge>
+          </div>
         )}
-        <div className="aspect-square relative">
+        <div className="aspect-square relative bg-[#ECEEF0] rounded-[24px] overflow-hidden">
           <Image
             src={product.images?.[0] || '/images/placeholder.png'}
             alt={product.name}
             fill
-            className="object-contain p-4"
+            className="object-contain p-6 group-hover:scale-110 transition-transform duration-500"
           />
         </div>
       </div>
-      <div className="mt-4">
-        <h3 className="font-semibold text-sm uppercase leading-tight">
+      <div className="mt-4 px-1">
+        <h3 className="font-bold text-[18px] md:text-[20px] uppercase tracking-tight text-[#232321] leading-[1.2] min-h-[48px] line-clamp-2">
           {product.name}
         </h3>
-        <button className="mt-3 w-full bg-black text-white py-2.5 px-4 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors group-hover:opacity-90">
-          VIEW PRODUCT - <span className="text-orange-400">{formatPrice(product.price)}</span>
+        <button className="mt-4 w-full bg-[#232321] text-white h-[48px] rounded-lg transition-all hover:bg-black font-bold text-[12px] tracking-widest flex items-center justify-center gap-1.5 duration-200">
+          VIEW PRODUCT - <span className="text-[#FFA542]">{formatPrice(product.price)}</span>
         </button>
       </div>
     </Link>

@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const COLOR_MAP = {
-  'Shadow Navy': '#1a2744',
-  'Army Green': '#5a6b4e',
+  'Shadow Navy': '#232321', // Dark shade as shown in design
+  'Army Green': '#697361',
   'Core Black': '#111',
   'Cloud White': '#f5f5f5',
   White: '#fff',
@@ -22,21 +22,21 @@ export default function ColorSelector({ colors = [], onSelect }) {
   };
 
   return (
-    <div>
-      <h3 className="text-xs font-bold uppercase tracking-wider mb-3">Color</h3>
-      <div className="flex gap-3">
+    <div className="mb-6">
+      <h3 className="text-[16px] font-bold text-[#232321] uppercase tracking-tight mb-3">Color</h3>
+      <div className="flex gap-4">
         {colors.map((color) => (
           <button
             key={color}
             onClick={() => handleSelect(color)}
             title={color}
             className={cn(
-              'w-8 h-8 rounded-full transition-all border-2',
+              'w-[32px] h-[32px] rounded-full transition-all relative',
               selected === color
-                ? 'ring-2 ring-offset-2 ring-black border-white'
-                : 'border-transparent hover:ring-2 hover:ring-offset-1 hover:ring-gray-300'
+                ? 'ring-1 ring-offset-2 ring-[#232321]'
+                : 'hover:ring-1 hover:ring-offset-1 hover:ring-gray-300'
             )}
-            style={{ backgroundColor: COLOR_MAP[color] || '#ccc' }}
+            style={{ backgroundColor: COLOR_MAP[color] || color }}
           />
         ))}
       </div>

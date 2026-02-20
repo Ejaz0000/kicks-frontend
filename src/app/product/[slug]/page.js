@@ -25,17 +25,19 @@ export default async function ProductPage({ params }) {
   const related = await getRelatedProducts(product.id);
 
   return (
-    <Container className="py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <Container className="py-8 md:py-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
         <ProductGallery images={product.images} />
-        <div>
+        <div className="flex flex-col">
           <ProductInfo product={product} />
-          <div className="mt-5">
+          <div className="mt-8">
             <ProductActions product={product} />
           </div>
         </div>
       </div>
-      <RelatedProducts products={related} />
+      <div className="mt-24">
+        <RelatedProducts products={related} />
+      </div>
     </Container>
   );
 }

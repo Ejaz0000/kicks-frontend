@@ -5,19 +5,14 @@ import Button from '@/components/ui/Button';
 
 export default function NewDropsSection({ products = [] }) {
   return (
-    <section className="py-16">
+    <section className="py-12 md:py-16 bg-gray-100">
       <Container>
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              DON&apos;T MISS OUT
-            </h2>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              NEW DROPS
-            </h2>
-          </div>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-0 mb-12">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight max-w-2xl">
+            DON&apos;T MISS OUT NEW DROPS
+          </h2>
           <Link href="/">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2.5 rounded shrink-0 transition-colors duration-200">
               SHOP NEW DROPS
             </Button>
           </Link>

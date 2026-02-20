@@ -59,24 +59,26 @@ export default function CartPage() {
 
   return (
     <>
-      <Container className="py-8">
-        <div className="mb-6">
-          <h1 className="text-xl font-bold">Saving to celebrate</h1>
-          <p className="text-xs text-gray-600 mt-1">
+      <Container className="py-10 md:py-16">
+        <div className="mb-10">
+          <h1 className="text-[32px] md:text-[48px] font-bold text-[#232321] leading-tight mb-2">
+            Saving to celebrate
+          </h1>
+          <p className="text-[14px] md:text-[16px] text-[#232321]/80 max-w-2xl leading-relaxed">
             Enjoy up to 60% off thousands of styles during the End of Year sale - while supplies last. No code needed.
           </p>
-          <p className="text-xs mt-1">
-            <Link href="/" className="underline font-medium">Join us</Link>
-            {' '}or{' '}
-            <Link href="/" className="underline font-medium">Sign-in</Link>
-          </p>
+          <div className="text-[14px] md:text-[16px] font-bold text-[#232321] mt-2 flex gap-1 items-center">
+            <Link href="/" className="underline decoration-2 underline-offset-4 hover:text-[#4A69E2] transition-colors">Join us</Link>
+            <span className="font-normal text-[#232321]/60">or</span>
+            <Link href="/" className="underline decoration-2 underline-offset-4 hover:text-[#4A69E2] transition-colors">Sign-in</Link>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-20 items-start">
+          <div className="lg:col-span-8">
             <CartList />
           </div>
-          <div>
+          <div className="lg:col-span-4">
             <OrderSummary />
           </div>
         </div>

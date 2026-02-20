@@ -29,7 +29,7 @@ export default function ProductActions({ product }) {
   };
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <ColorSelector colors={product.colors} onSelect={setSelectedColor} />
       <SizeSelector
         sizes={product.sizes}
@@ -37,28 +37,32 @@ export default function ProductActions({ product }) {
         onSelect={setSelectedSize}
       />
 
-      <div className="flex gap-2">
-        <button
-          onClick={handleAddToCart}
-          disabled={!product.inStock || !selectedSize || !selectedColor}
-          className="flex-1 bg-black text-white py-3 rounded-lg text-sm font-bold uppercase tracking-wider hover:bg-gray-800 transition-colors disabled:opacity-50"
-        >
-          ADD TO CART
-        </button>
-        <button className="w-12 h-12 border border-gray-300 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors">
-          <Heart className="w-5 h-5" />
+      <div className="space-y-3">
+        <div className="flex gap-2">
+          <button
+            onClick={handleAddToCart}
+            disabled={!product.inStock || !selectedSize || !selectedColor}
+            className="flex-1 bg-[#232321] text-white h-[56px] rounded-lg text-sm font-bold uppercase tracking-widest hover:bg-black transition-all flex items-center justify-center disabled:opacity-50"
+          >
+            ADD TO CART
+          </button>
+          <button className="w-[56px] h-[56px] bg-[#232321] text-white rounded-lg flex items-center justify-center hover:bg-black transition-all">
+            <Heart className="w-6 h-6" />
+          </button>
+        </div>
+
+        <button className="w-full bg-[#4A69E2] text-white h-[56px] rounded-lg text-sm font-bold uppercase tracking-widest hover:bg-[#3b5bd9] transition-all">
+          BUY IT NOW
         </button>
       </div>
 
-      <button className="w-full bg-blue-600 text-white py-3 rounded-lg text-sm font-bold uppercase tracking-wider hover:bg-blue-700 transition-colors">
-        BUY IT NOW
-      </button>
-
-      <ProductDescription
-        description={product.description}
-        colorway={product.colorway}
-        bullets={product.bullets || []}
-      />
+      <div className="pt-8 group">
+         <ProductDescription
+          description={product.description}
+          colorway={product.colorway}
+          bullets={product.bullets || []}
+        />
+      </div>
     </div>
   );
 }
