@@ -1,26 +1,30 @@
 import Link from 'next/link';
 import Container from '@/components/layout/Container';
-import SectionTitle from '@/components/ui/SectionTitle';
-import Card from '@/components/ui/Card';
-import { formatPrice } from '@/lib/utils';
+import ProductCard from './ProductCard';
+import Button from '@/components/ui/Button';
 
 export default function NewDropsSection({ products = [] }) {
   return (
     <section className="py-16">
       <Container>
-        <SectionTitle title="New Drops" subtitle="Freshest kicks just landed" />
+        <div className="flex items-end justify-between mb-8">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              DON&apos;T MISS OUT
+            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              NEW DROPS
+            </h2>
+          </div>
+          <Link href="/">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+              SHOP NEW DROPS
+            </Button>
+          </Link>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
-            <Link key={product.id} href={`/product/${product.slug}`}>
-              <Card className="overflow-hidden hover:shadow-md transition-shadow">
-                <div className="aspect-square bg-gray-100" />
-                <div className="p-4">
-                  <p className="text-sm text-gray-500">{product.brand}</p>
-                  <h3 className="font-semibold">{product.name}</h3>
-                  <p className="mt-1 font-bold">{formatPrice(product.price)}</p>
-                </div>
-              </Card>
-            </Link>
+            <ProductCard key={product.id} product={product} showBadge />
           ))}
         </div>
       </Container>

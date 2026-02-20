@@ -3,8 +3,18 @@
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
+const COLOR_MAP = {
+  'Shadow Navy': '#1a2744',
+  'Army Green': '#5a6b4e',
+  'Core Black': '#111',
+  'Cloud White': '#f5f5f5',
+  White: '#fff',
+  Black: '#111',
+  Red: '#dc2626',
+};
+
 export default function ColorSelector({ colors = [], onSelect }) {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(colors[0] || null);
 
   const handleSelect = (color) => {
     setSelected(color);
@@ -13,21 +23,21 @@ export default function ColorSelector({ colors = [], onSelect }) {
 
   return (
     <div>
-      <h3 className="text-sm font-semibold mb-2">Color</h3>
-      <div className="flex flex-wrap gap-2">
+      <h3 className="text-xs font-bold uppercase tracking-wider mb-3">Color</h3>
+      <div className="flex gap-3">
         {colors.map((color) => (
           <button
             key={color}
             onClick={() => handleSelect(color)}
+            title={color}
             className={cn(
-              'px-4 py-2 border rounded-md text-sm font-medium transition-colors',
+              'w-8 h-8 rounded-full transition-all border-2',
               selected === color
-                ? 'border-black bg-black text-white'
-                : 'border-gray-300 hover:border-black'
+                ? 'ring-2 ring-offset-2 ring-black border-white'
+                : 'border-transparent hover:ring-2 hover:ring-offset-1 hover:ring-gray-300'
             )}
-          >
-            {color}
-          </button>
+            style={{ backgroundColor: COLOR_MAP[color] || '#ccc' }}
+          />
         ))}
       </div>
     </div>

@@ -4,13 +4,10 @@ import NewDropsSection from '@/components/home/NewDropsSection';
 import CategoriesSection from '@/components/home/CategoriesSection';
 import ReviewsSection from '@/components/home/ReviewsSection';
 import NewsletterSection from '@/components/home/NewsletterSection';
-import { getNewDrops, getCategories } from '@/services/product.service';
+import { getNewDrops } from '@/services/product.service';
 
 export default async function HomePage() {
-  const [products, categories] = await Promise.all([
-    getNewDrops(),
-    getCategories(),
-  ]);
+  const products = await getNewDrops();
 
   return (
     <>
@@ -18,7 +15,7 @@ export default async function HomePage() {
       <Suspense fallback={<div className="py-16 text-center">Loading...</div>}>
         <NewDropsSection products={products} />
       </Suspense>
-      <CategoriesSection categories={categories} />
+      <CategoriesSection />
       <ReviewsSection />
       <NewsletterSection />
     </>

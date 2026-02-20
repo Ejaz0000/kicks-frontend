@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import Container from '@/components/layout/Container';
 import ProductGallery from '@/components/product/ProductGallery';
 import ProductInfo from '@/components/product/ProductInfo';
-import ProductDescription from '@/components/product/ProductDescription';
 import RelatedProducts from '@/components/product/RelatedProducts';
 import ProductActions from './ProductActions';
 import { getProductBySlug, getRelatedProducts } from '@/services/product.service';
@@ -26,15 +25,16 @@ export default async function ProductPage({ params }) {
   const related = await getRelatedProducts(product.id);
 
   return (
-    <Container className="py-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <Container className="py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <ProductGallery images={product.images} />
-        <div className="space-y-6">
+        <div>
           <ProductInfo product={product} />
-          <ProductActions product={product} />
+          <div className="mt-5">
+            <ProductActions product={product} />
+          </div>
         </div>
       </div>
-      <ProductDescription description={product.description} />
       <RelatedProducts products={related} />
     </Container>
   );
