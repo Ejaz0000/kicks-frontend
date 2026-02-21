@@ -62,7 +62,7 @@ export default function HeroSection() {
               Nike introducing the new air max for everyone&apos;s comfort
             </p>
             <Link href="/">
-              <Button className="bg-(--blue-primary) hover:bg-blue-700 text-white font-bold px-4 py-2 md:px-8 md:py-[14px] rounded-lg transition-colors duration-200 text-sm">
+              <Button className="bg-(--blue-primary) hover:bg-blue-700 text-white font-medium md:font-semibold px-4 py-2 md:px-8 md:py-[14px] rounded-lg transition-colors duration-200 text-sm">
                 SHOP NOW
               </Button>
             </Link>
