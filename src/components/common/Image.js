@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import NextImage from 'next/image';
 
 export default function Image({ src, alt, onError, ...props }) {
@@ -10,6 +10,14 @@ export default function Image({ src, alt, onError, ...props }) {
     setImgSrc('/assets/default.jpg');
     onError?.();
   };
+
+  useEffect(() => {
+    if (!src) {
+      setImgSrc('/assets/default.jpg');
+    } else {
+      setImgSrc(src);
+    }
+  }, [src]);
 
   return (
     <NextImage

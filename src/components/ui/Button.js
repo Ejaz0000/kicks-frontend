@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 const Button = forwardRef(function Button({ children, className, variant = 'primary', size = 'md', ...props }, ref) {
   const variants = {
-    primary: 'bg-black text-white hover:bg-gray-800',
+    primary: 'bg-(--blue-primary) text-white hover:bg-blue-700',
     secondary: 'bg-white text-black border border-gray-300 hover:bg-gray-50',
     danger: 'bg-red-600 text-white hover:bg-red-700',
     ghost: 'bg-transparent hover:bg-gray-100',
@@ -19,7 +19,7 @@ const Button = forwardRef(function Button({ children, className, variant = 'prim
     <button
       ref={ref}
       className={cn(
-        'inline-flex items-center justify-center rounded-md font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none',
+        'inline-flex items-center cursor-pointer justify-center rounded-md font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none',
         variants[variant],
         sizes[size],
         className
