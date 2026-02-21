@@ -3,61 +3,54 @@ import Image from '@/components/common/Image';
 import Container from '@/components/layout/Container';
 import Button from '@/components/ui/Button';
 import { Star } from 'lucide-react';
+import SectionTitle from '../ui/SectionTitle';
 
 const REVIEWS_DATA = [
   { 
     id: 1, 
     name: 'Alex M.', 
-    avatar: '/images/avatar-1.png',
+    avatar: '/assets/avatar-1.jpg',
     rating: 5, 
     title: 'Good Quality',
     text: 'I highly recommend shopping from kicks',
-    image: '/images/review-1.png'
+    image: '/assets/review-1.png'
   },
   { 
     id: 2, 
     name: 'Sarah K.', 
-    avatar: '/images/avatar-2.png',
+    avatar: '/assets/avatar-2.png',
     rating: 5, 
     title: 'Good Quality',
     text: 'I highly recommend shopping from kicks',
-    image: '/images/review-2.png'
+    image: '/assets/review-2.png'
   },
   { 
     id: 3, 
     name: 'James R.', 
-    avatar: '/images/avatar-3.png',
+    avatar: '/assets/avatar-3.png',
     rating: 5, 
     title: 'Good Quality',
     text: 'I highly recommend shopping from kicks',
-    image: '/images/review-3.png'
+    image: '/assets/review-3.png'
   },
 ];
 
 export default function ReviewsSection() {
   return (
-    <section className="py-16 md:py-20 bg-gray-100">
+    <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <Container>
-        <div className="flex items-center justify-between gap-4 md:gap-0 mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-gray-900">
-            REVIEWS
-          </h2>
-          <Link href="/">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2.5 rounded transition-colors duration-200 flex-shrink-0">
-              SEE ALL
-            </Button>
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <SectionTitle title="REVIEWS" buttonText="SEE ALL" link="/" className="mb-12" />
+        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-4 md:gap-6 pb-4 md:pb-1 snap-x snap-mandatory scrollbar-hide md:mx-0 md:px-0">
           {REVIEWS_DATA.map((review) => (
-            <div key={review.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="p-4 md:p-6">
-                <div className="flex items-start justify-between gap-3 mb-4">
+            <div key={review.id} className="bg-white rounded-2xl md:rounded-4xl h-[340px] md:h-[501px] overflow-hidden hover:shadow-sm transition-shadow duration-200 min-w-[92vw] max-w-[92vw]  sm:min-w-[300px] md:min-w-0 snap-center flex-shrink-0 flex flex-col">
+              <div className="p-4 md:p-8">
+                <div className="flex items-start justify-between gap-2 mb-2">
                   <div>
-                    <h3 className="font-bold text-base md:text-lg text-gray-900 mb-1">{review.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{review.text}</p>
+                    <p className="font-semibold text-xl md:text-2xl text-(--dark-gray) mb-2">{review.title}</p>
+                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">{review.text}</p>
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden relative flex-shrink-0">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gray-200 overflow-hidden relative flex-shrink-0">
                     <Image
                       src={review.avatar}
                       alt={review.name}
@@ -67,15 +60,15 @@ export default function ReviewsSection() {
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="flex gap-0.5">
+                  <div className="flex gap-1">
                     {Array.from({ length: review.rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-[#FFA52F] text-[#FFA52F]" />
                     ))}
                   </div>
-                  <span className="text-sm font-semibold text-gray-900">5.0</span>
+                  <span className="sm:text-sm text-base font-semibold text-(--dark-gray) ml-1">5.0</span>
                 </div>
               </div>
-              <div className="aspect-square relative bg-gray-100">
+              <div className="relative bg-gray-100 flex-1">
                 <Image
                   src={review.image}
                   alt="Review"
