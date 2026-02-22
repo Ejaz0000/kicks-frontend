@@ -22,18 +22,18 @@ export default function ColorSelector({ colors = [], onSelect }) {
   };
 
   return (
-    <div className="mb-6">
-      <h3 className="text-[16px] font-bold text-[#232321] uppercase tracking-tight mb-3">Color</h3>
-      <div className="flex gap-4">
+    <div className="mb-8">
+      <p className="text-[16px] font-semibold text-(--dark-gray) tracking-tight mb-3  mb:uppercase">Color</p>
+      <div className="flex gap-4 pl-2">
         {colors.map((color) => (
           <button
             key={color}
             onClick={() => handleSelect(color)}
             title={color}
             className={cn(
-              'w-[32px] h-[32px] rounded-full transition-all relative',
+              'w-[22px] h-[22px] md:w-[32px] md:h-[32px] rounded-full transition-all relative',
               selected === color
-                ? 'ring-1 ring-offset-2 ring-[#232321]'
+                ? 'ring-3 ring-offset-2 md:ring-offset-5 ring-(--dark-gray) ring-offset-(--background)'
                 : 'hover:ring-1 hover:ring-offset-1 hover:ring-gray-300'
             )}
             style={{ backgroundColor: COLOR_MAP[color] || color }}

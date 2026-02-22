@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-6 md:pt-8">
-          <p className="text-center text-sm md:text-base text-[#232321] font-medium">
+          <p className="sub-text text-center text-base text-(--dark-gray) font-normal">
             &copy; All rights reserved
           </p>
         </div>

@@ -12,7 +12,7 @@ export default function ProductCard({ product, showBadge = false }) {
             New
           </div>
         )}
-        <div className="aspect-[3/3.3] relative bg-[#ECEEF0] rounded-xl md:rounded-2xl overflow-hidden">
+        <div className="aspect-[3/3.3] relative bg-[#ECEEF0] rounded-xl md:rounded-3xl overflow-hidden">
           <Image
             src={'/assets/shoe-1.png'}
             alt={product.name}
@@ -22,7 +22,7 @@ export default function ProductCard({ product, showBadge = false }) {
         </div>
       </div>
       <div className="mt-4">
-        <p className="font-semibold text-base md:text-2xl uppercase tracking-tight text-(--dark-gray) leading-[1.2] min-h-[48px] line-clamp-2 mb-0">
+        <p className="font-semibold text-base md:text-2xl uppercase tracking-tight text-(--dark-gray) leading-[1.2]  line-clamp-2 mb-0">
           {product.name}
         </p>
         <button className="mt-4 w-full bg-(--dark-gray) text-white h-10 md:h-12 rounded-lg transition-all hover:bg-black font-medium text-xs md:text-sm tracking-widest flex items-center justify-center gap-2 duration-200">

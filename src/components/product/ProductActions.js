@@ -37,21 +37,21 @@ export default function ProductActions({ product }) {
         onSelect={setSelectedSize}
       />
 
-      <div className="space-y-3">
+      <div className="space-y-2">
         <div className="flex gap-2">
           <button
             onClick={handleAddToCart}
             disabled={!product.inStock || !selectedSize || !selectedColor}
-            className="flex-1 bg-[#232321] text-white h-[56px] rounded-lg text-sm font-bold uppercase tracking-widest hover:bg-black transition-all flex items-center justify-center disabled:opacity-50"
+            className="flex-1 bg-(--dark-gray) text-white h-12 rounded-lg text-sm font-medium uppercase tracking-widest hover:bg-black transition-all flex items-center justify-center disabled:opacity-50"
           >
             ADD TO CART
           </button>
-          <button className="w-[56px] h-[56px] bg-[#232321] text-white rounded-lg flex items-center justify-center hover:bg-black transition-all">
-            <Heart className="w-6 h-6" />
+          <button className="w-12 h-12 bg-(--dark-gray) text-white rounded-lg flex items-center justify-center hover:bg-black transition-all">
+            <Heart className="w-4 h-4" />
           </button>
         </div>
 
-        <button className="w-full bg-[#4A69E2] text-white h-[56px] rounded-lg text-sm font-bold uppercase tracking-widest hover:bg-[#3b5bd9] transition-all">
+        <button className="w-full bg-(--blue-primary) text-white h-12 rounded-lg text-sm font-medium uppercase tracking-widest hover:bg-[#3b5bd9] transition-all">
           BUY IT NOW
         </button>
       </div>

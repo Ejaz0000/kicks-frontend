@@ -105,6 +105,84 @@ const MOCK_PRODUCTS = [
     reviews: 174,
     inStock: true,
   },
+  {
+    id: '5',
+    slug: 'adidas-4dfwd-x-parley',
+    name: 'ADIDAS 4DFWD X PARLEY RUNNING SHOES',
+    brand: 'Adidas',
+    price: 125,
+    description: 'This product is excluded from all promotional discounts and offers.',
+    colorway: 'Shadow Navy / Army Green',
+    bullets: [
+      'Pay over time in interest-free installments with Affirm, Klarna or Afterpay.',
+      'Join adiClub to get unlimited free standard shipping, returns, & exchanges.',
+    ],
+    images: [
+      '/images/products/adidas-4dfwd-1.png',
+      '/images/products/adidas-4dfwd-2.png',
+      '/images/products/adidas-4dfwd-3.png',
+      '/images/products/adidas-4dfwd-4.png',
+    ],
+    sizes: [38, 39, 40, 41, 42, 43, 44, 45, 46, 47],
+    disabledSizes: [39, 40],
+    colors: ['Shadow Navy', 'Army Green'],
+    category: 'running',
+    rating: 4.7,
+    reviews: 256,
+    inStock: true,
+  },
+  {
+    id: '6',
+    slug: 'ultraboost-22',
+    name: 'ADIDAS ULTRABOOST 22 RUNNING SHOES',
+    brand: 'Adidas',
+    price: 125,
+    description: 'This product is excluded from all promotional discounts and offers.',
+    colorway: 'Shadow Navy / Army Green',
+    bullets: [
+      'Pay over time in interest-free installments with Affirm, Klarna or Afterpay.',
+      'Join adiClub to get unlimited free standard shipping, returns, & exchanges.',
+    ],
+    images: [
+      '/images/products/adidas-4dfwd-1.png',
+      '/images/products/adidas-4dfwd-2.png',
+      '/images/products/adidas-4dfwd-3.png',
+      '/images/products/adidas-4dfwd-4.png',
+    ],
+    sizes: [38, 39, 40, 41, 42, 43, 44, 45, 46, 47],
+    disabledSizes: [39, 40],
+    colors: ['Shadow Navy', 'Army Green'],
+    category: 'running',
+    rating: 4.7,
+    reviews: 256,
+    inStock: true,
+  },
+  {
+    id: '7',
+    slug: 'classic-leather',
+    name: 'ADIDAS CLASSIC LEATHER RUNNING SHOES',
+    brand: 'Adidas',
+    price: 125,
+    description: 'This product is excluded from all promotional discounts and offers.',
+    colorway: 'Shadow Navy / Army Green',
+    bullets: [
+      'Pay over time in interest-free installments with Affirm, Klarna or Afterpay.',
+      'Join adiClub to get unlimited free standard shipping, returns, & exchanges.',
+    ],
+    images: [
+      '/images/products/adidas-4dfwd-1.png',
+      '/images/products/adidas-4dfwd-2.png',
+      '/images/products/adidas-4dfwd-3.png',
+      '/images/products/adidas-4dfwd-4.png',
+    ],
+    sizes: [38, 39, 40, 41, 42, 43, 44, 45, 46, 47],
+    disabledSizes: [39, 40],
+    colors: ['Shadow Navy', 'Army Green'],
+    category: 'running',
+    rating: 4.7,
+    reviews: 256,
+    inStock: true,
+  },
 ];
 
 export async function getProducts(params) {
@@ -124,7 +202,7 @@ export async function getProductBySlug(slug) {
 
 export async function getRelatedProducts(productId) {
   // TODO: Replace with real API call
-  return MOCK_PRODUCTS.filter((p) => p.id !== productId).slice(0, 4);
+  return MOCK_PRODUCTS;
 }
 
 export async function getNewDrops() {
