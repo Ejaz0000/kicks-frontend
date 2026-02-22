@@ -12,52 +12,52 @@ export default function OrderSummary() {
   const total = subtotal + (subtotal > 0 ? DELIVERY_COST : 0);
 
   return (
-    <div className="bg-white rounded-[24px] p-6 md:p-8 shadow-sm border border-[#ECEEF0]">
-      <h2 className="text-[24px] md:text-[32px] font-bold text-[#232321] leading-none mb-8">
+    <div className="bg-[#FAFAFA] lg:bg-transparent rounded-2xl px-4 py-4 md:px-0 md:py-6">
+      <h2 className="text-[20px] md:text-[32px] font-semibold text-(--dark-gray) mb-6">
         Order Summary
       </h2>
-      <div className="space-y-6">
+      <div className="space-y-4">
         <div className="flex justify-between items-center">
-          <span className="text-[16px] md:text-[20px] font-bold text-[#232321] uppercase tracking-tight">
+          <span className="text-[16px] md:text-[20px] font-semibold sub-text text-(--dark-gray)">
             {itemCount} ITEM{itemCount !== 1 ? 'S' : ''}
           </span>
-          <span className="text-[16px] md:text-[20px] font-bold text-[#232321]">
+          <span className="text-[16px] md:text-[20px] font-semibold sub-text text-(--dark-gray)/80">
             {formatPrice(subtotal)}
           </span>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-[16px] md:text-[20px] font-bold text-[#232321] uppercase tracking-tight">
+          <span className="text-[16px] md:text-[20px] font-semibold sub-text text-(--dark-gray)">
             Delivery
           </span>
-          <span className="text-[16px] md:text-[20px] font-bold text-[#232321]">
-            {subtotal > 0 ? formatPrice(DELIVERY_COST) : '—'}
+          <span className="text-[16px] md:text-[20px] font-semibold sub-text text-(--dark-gray)/80">
+            {subtotal > 0 ? formatPrice(DELIVERY_COST) : '-'}
           </span>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-[16px] md:text-[20px] font-bold text-[#232321] uppercase tracking-tight">
+          <span className="text-[16px] md:text-[20px] font-semibold sub-text text-(--dark-gray)">
             Sales Tax
           </span>
-          <span className="text-[16px] md:text-[20px] font-bold text-[#232321]">
-            —
+          <span className="text-[16px] md:text-[20px] font-semibold sub-text text-(--dark-gray)/80">
+            -
           </span>
         </div>
-        <div className="pt-6 border-t border-[#ECEEF0] flex justify-between items-center">
-          <span className="text-[20px] md:text-[28px] font-black text-[#232321] uppercase tracking-tight">
+        <div className="flex justify-between items-center">
+          <span className="text-[20px] md:text-[20px] font-semibold  text-(--dark-gray)">
             Total
           </span>
-          <span className="text-[20px] md:text-[24px] font-black text-[#232321]">
+          <span className="text-[20px] md:text-[24px] font-semibold  text-(--dark-gray)/80">
             {formatPrice(total)}
           </span>
         </div>
       </div>
       <button
         disabled={subtotal === 0}
-        className="w-full bg-[#232321] text-white h-[56px] rounded-lg text-sm font-bold uppercase tracking-widest mt-10 hover:bg-black transition-all disabled:opacity-50 shadow-sm"
+        className="w-full bg-(--dark-gray) text-white h-[48px] rounded-[8px] text-sm font-medium uppercase tracking-widest mt-6 hover:bg-black transition-all disabled:opacity-50"
       >
         CHECKOUT
       </button>
-      <button className="w-full text-left md:text-center text-[16px] font-bold text-[#232321] underline underline-offset-4 mt-6 hover:text-[#4A69E2] transition-colors leading-none">
-        User a promo code
+      <button className="w-full text-left text-base md:text-[20px] font-semibold sub-text text-(--dark-gray) underline decoration-[0.5px] underline-offset-2 mt-4 mb:mt-6 hover:text-[#4A69E2] transition-colors">
+        Use a promo code
       </button>
     </div>
   );

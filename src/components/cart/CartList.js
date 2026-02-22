@@ -7,12 +7,12 @@ export default function CartList() {
   const items = useAppSelector((state) => state.cart.items);
 
   return (
-    <div className="bg-white rounded-[24px] p-6 shadow-sm border border-[#ECEEF0]">
+    <div className="bg-[#FAFAFA] rounded-2xl p-4 md:p-6">
       <div className="mb-8">
-        <h2 className="text-[24px] md:text-[32px] font-bold text-[#232321] leading-none mb-2">
+        <h2 className="text-[20px] md:text-[32px] font-semibold text-(--dark-gray) mb-2">
           Your Bag
         </h2>
-        <p className="text-[14px] md:text-[16px] text-[#232321]/80 leading-snug">
+        <p className="text-sm md:text-base font-normal sub-text text-(--dark-gray)/80">
           Items in your bag not reserved- check out now to make them yours.
         </p>
       </div>

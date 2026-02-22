@@ -75,7 +75,7 @@ export default function RelatedProducts({ products = [] }) {
         </div>
 
         {/* Pagination Indicators */}
-        {totalPages > 1 && (
+        {totalPages && (
           <div className="flex justify-center mt-8">
             <div className="flex gap-1 h-1.5 w-[80px]">
               {Array.from({ length: totalPages }).map((_, i) => (
