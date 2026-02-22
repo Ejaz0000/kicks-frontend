@@ -58,7 +58,7 @@ export default function HeroSection() {
           {/* Bottom Left Content */}
           <div className="absolute bottom-0 left-0 p-4 md:p-12 z-10 flex flex-col items-start">
             <h2 className="text-white text-2xl md:text-[74px] font-semibold mb-0 tracking-tight">NIKE AIR MAX</h2>
-            <p className="text-(--light-gray) text-sm md:text-2xl mb-2 md:mb-4 max-w-[200px] md:max-w-md leading-relaxed font-medium">
+            <p className="text-(--light-gray) sub-text text-sm md:text-2xl mb-2 md:mb-4 max-w-[200px] md:max-w-md leading-relaxed font-medium">
               Nike introducing the new air max for everyone&apos;s comfort
             </p>
             <Link href="/">

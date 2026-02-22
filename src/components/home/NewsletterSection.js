@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import Container from '@/components/layout/Container';
-import Button from '@/components/ui/Button';
-import Input from '@/components/ui/Input';
+import Image from '@/components/common/Image';
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState('');
@@ -14,36 +13,47 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="py-16">
+    <section className="pt-16 md:pt-20 px-4 sm:px-6 lg:px-8">
       <Container>
-        <div className="relative bg-blue-600 rounded-3xl overflow-hidden">
-          <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:flex items-center justify-center">
-            <span className="text-[12rem] font-bold text-white/10 select-none">
-              KICKS
-            </span>
-          </div>
+        <div className="relative bg-(--blue-primary) rounded-t-[24px] md:rounded-t-[48px] overflow-hidden px-4 md:px-18 pt-4 md:pt-16 pb-18 md:pb-24  flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 md:gap-16">
           
-          <div className="relative z-10 p-8 md:p-12 lg:p-16 max-w-xl">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3">
+          <div className="relative z-10 w-full lg:max-w-[500px]">
+            <h2 className="text-[32px] md:text-[48px] font-semibold text-white leading-[1.1] tracking-tight mb-4 max-w-[326px] md:max-w-[510px] lowercase md:uppercase">
               JOIN OUR KICKSPLUS CLUB & GET 15% OFF
             </h2>
-            <p className="text-white/80 text-sm mb-6">
+            <p className="text-(--light-gray) sub-text text-base md:text-xl font-semibold mb-8">
               Sign up for free! Join the community.
             </p>
-            <form onSubmit={handleSubmit} className="flex gap-3">
-              <Input
+            <form onSubmit={handleSubmit} className="flex gap-3 w-full">
+              <input
                 type="email"
                 placeholder="Email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-white text-black border-0 rounded-lg flex-1"
+                className="bg-transparent text-white placeholder:text-white/70 border border-white rounded-lg px-4 py-2 flex-1 focus:outline-none focus:border-white transition-colors max-w-[342px]"
                 required
               />
-              <Button type="submit" className="bg-black text-white hover:bg-gray-800 shrink-0 rounded-lg">
+              <button 
+                type="submit" 
+                className="bg-(--dark-gray) text-white font-medium text-sm tracking-wider px-4 md:px-6 py-2 rounded-lg hover:bg-black transition-colors"
+              >
                 SUBMIT
-              </Button>
+              </button>
             </form>
           </div>
+
+          <div className="relative z-10 w-full flex justify-start md:justify-center">
+            <div className='w-[200px] md:w-[367px] h-[62px] md:h-[112px]'>
+              <Image
+                src="/assets/newsletter-logo.png"
+                alt="KICKS Logo"
+                width={367}
+                height={112}
+                className="object-contain w-full h-full"
+              />
+            </div>
+          </div>
+
         </div>
       </Container>
     </section>

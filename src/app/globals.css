@@ -47,3 +47,7 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.sub-text {
+  font-family: Open Sans, Helvetica, sans-serif;
+}

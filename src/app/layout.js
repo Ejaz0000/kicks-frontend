@@ -1,4 +1,5 @@
 import { Rubik } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import Header from "@/components/layout/Header";
@@ -10,6 +11,12 @@ const rubik = Rubik({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
 export const metadata = {
   title: "KICKS - Premium Sneakers",
   description: "Your destination for premium sneakers",
@@ -19,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${rubik.variable} antialiased`}
+        className={`${rubik.variable} ${openSans.variable} antialiased`}
       >
         <Providers>
           <Header />

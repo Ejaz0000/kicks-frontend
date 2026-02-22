@@ -1,74 +1,88 @@
 import Link from 'next/link';
 import Container from './Container';
-import { Facebook, Instagram, Twitter, Music } from 'lucide-react';
+import Image from '@/components/common/Image';
+import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-white">
+    <footer className="px-4 sm:px-6 lg:px-8 pb-4 md:pb-8">
       <Container>
-        <div className="py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div>
-            <h3 className="font-bold text-lg mb-4">About us</h3>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              We are the biggest hyperstore in the universe. We got you all cover with our exclusive collections and latest drops.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-bold mb-4">Categories</h4>
-            <ul className="space-y-3 text-sm text-gray-400">
-              <li><Link href="/" className="hover:text-white transition-colors">Runners</Link></li>
-              <li><Link href="/" className="hover:text-white transition-colors">Sneakers</Link></li>
-              <li><Link href="/" className="hover:text-white transition-colors">Basketball</Link></li>
-              <li><Link href="/" className="hover:text-white transition-colors">Outdoor</Link></li>
-              <li><Link href="/" className="hover:text-white transition-colors">Golf</Link></li>
-              <li><Link href="/" className="hover:text-white transition-colors">Hiking</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold mb-4">Company</h4>
-            <ul className="space-y-3 text-sm text-gray-400">
-              <li><Link href="/" className="hover:text-white transition-colors">About</Link></li>
-              <li><Link href="/" className="hover:text-white transition-colors">Contact</Link></li>
-              <li><Link href="/" className="hover:text-white transition-colors">Blogs</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold mb-4">Follow us</h4>
-            <div className="flex items-center gap-4">
-              <Link href="/" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                <Facebook className="w-5 h-5" />
-              </Link>
-              <Link href="/" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                <Instagram className="w-5 h-5" />
-              </Link>
-              <Link href="/" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                <Twitter className="w-5 h-5" />
-              </Link>
-              <Link href="/" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                <Music className="w-5 h-5" />
-              </Link>
+        <div className="bg-(--dark-gray) text-white rounded-[24px] md:rounded-[48px] overflow-hidden relative -mt-8 md:-mt-12 z-20">
+          <div className="pt-6 md:pt-10 pb-[112px] md:pb-[305px] px-4 md:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-12 md:gap-10">
+            
+            <div className="lg:col-span-2">
+              <h3 className="font-semibold text-2xl md:text-4xl text-(--orange-primary) mb-2">About us</h3>
+              <p className="text-base sub-text md:text-xl text-(--light-gray) leading-relaxed font-semibold max-w-[336px] md:max-w-[446px]">
+                We are the biggest hyperstore in the universe. We got you all cover with our exclusive collections and latest drops.
+              </p>
             </div>
+
+            <div>
+              <h4 className="font-semibold text-xl md:text-2xl text-(--orange-primary) mb-3">Categories</h4>
+              <ul className="space-y-2 text-base md:text-xl font-semibold text-(--light-gray) sub-text">
+                <li><Link href="/" className="hover:text-white transition-colors">Runners</Link></li>
+                <li><Link href="/" className="hover:text-white transition-colors">Sneakers</Link></li>
+                <li><Link href="/" className="hover:text-white transition-colors">Basketball</Link></li>
+                <li><Link href="/" className="hover:text-white transition-colors">Outdoor</Link></li>
+                <li><Link href="/" className="hover:text-white transition-colors">Golf</Link></li>
+                <li><Link href="/" className="hover:text-white transition-colors">Hiking</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-xl md:text-2xl text-(--orange-primary) mb-3">Company</h4>
+              <ul className="space-y-2 text-base md:text-xl font-semibold text-(--light-gray) sub-text">
+                <li><Link href="/" className="hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/" className="hover:text-white transition-colors">Contact</Link></li>
+                <li><Link href="/" className="hover:text-white transition-colors">Blogs</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-xl md:text-2xl text-(--orange-primary) mb-3">Follow us</h4>
+              <div className="flex items-center gap-4 md:gap-6">
+                <Link href="/" className="text-(--light-gray) hover:text-white transition-colors">
+                  <Facebook className="w-6 h-6 fill-current" />
+                </Link>
+                <Link href="/" className="text-(--light-gray) hover:text-white transition-colors">
+                  <Instagram className="w-6 h-6" />
+                </Link>
+                <Link href="/" className="text-(--light-gray) hover:text-white transition-colors">
+                  <Twitter className="w-6 h-6" />
+                </Link>
+                <Link href="/" className="text-(--light-gray) hover:text-white transition-colors">
+                  <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Large Bottom Logo */}
+          <div className='px-4 md:px-10'>
+            <div className='relative w-full'>
+              <div className="absolute bottom-0 left-0 right-0 w-full aspect-[358/89]  md:aspect-[1262/314] translate-y-[35%] pointer-events-none">
+                <Image
+                  src="/assets/footer-logo.png"
+                  alt="KICKS"
+                  width={1262}
+                  height={314}
+                  className="object-contain"
+                />
+              </div>
+            </div>
+            
           </div>
         </div>
-      </Container>
 
-      <div className="relative overflow-hidden border-t border-white/10">
-        <Container>
-          <div className="relative py-8">
-            <span className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-bold text-white/5 leading-none select-none block">
-              KICKS
-            </span>
-          </div>
-        </Container>
-      </div>
-
-      <div className="border-t border-white/10 py-6">
-        <Container>
-          <p className="text-center text-sm text-gray-500">
+        <div className="pt-6 md:pt-8">
+          <p className="text-center text-sm md:text-base text-[#232321] font-medium">
             &copy; All rights reserved
           </p>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </footer>
   );
 }
