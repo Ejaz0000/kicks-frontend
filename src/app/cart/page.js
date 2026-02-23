@@ -1,49 +1,33 @@
-'use client';
 
 
 import RelatedProducts from '@/components/product/RelatedProducts';
 import NewsletterSection from '@/components/home/NewsletterSection';
 import CartDetails from '@/components/cart/CartDetails';
+import { getProducts } from '@/services/product.service';
 
-const SUGGESTED_PRODUCTS = [
-  {
-    id: '1',
-    slug: 'adidas-4dfwd-x-parley',
-    name: 'ADIDAS 4DFWD X PARLEY RUNNING SHOES',
-    price: 125,
-    images: ['/images/products/adidas-4dfwd-1.png'],
-  },
-  {
-    id: '2',
-    slug: 'ultraboost-22',
-    name: 'ADIDAS 4DFWD X PARLEY RUNNING SHOES',
-    price: 125,
-    images: ['/images/products/adidas-4dfwd-2.png'],
-  },
-  {
-    id: '3',
-    slug: 'classic-leather',
-    name: 'ADIDAS 4DFWD X PARLEY RUNNING SHOES',
-    price: 125,
-    images: ['/images/products/adidas-4dfwd-3.png'],
-  },
-  {
-    id: '4',
-    slug: 'adidas-4dfwd-orange',
-    name: 'ADIDAS 4DFWD X PARLEY RUNNING SHOES',
-    price: 125,
-    images: ['/images/products/adidas-4dfwd-4.png'],
-  },
-];
 
-export default function CartPage() {
+async function fetchProducts() {
+    try {
+    const products = await getProducts();
+    return products;
+  } catch (error) {
+    console.error('[HomePage] Failed to fetch products:', error.message);
+    throw error;
+  }
+  }
+
+
+export default async function CartPage() {
+  let suggestedProducts = [];
+  
+  suggestedProducts = await fetchProducts();
   
 
   return (
     <>
       <CartDetails />
 
-      <RelatedProducts products={SUGGESTED_PRODUCTS} />
+      <RelatedProducts products={suggestedProducts} />
 
       <NewsletterSection />
     </>

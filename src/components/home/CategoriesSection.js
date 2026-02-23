@@ -14,12 +14,12 @@ const CATEGORIES_DATA = [
   { id: 4, name: 'Training Shoes', image: '/images/category-training.png', href: '/' },
 ];
 
-export default function CategoriesSection() {
+export default function CategoriesSection({categories}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
 
   const handleNext = () => {
-    if (currentIndex < CATEGORIES_DATA.length - 2) {
+    if (currentIndex < categories.length - 2) {
       setIsFading(true);
       setTimeout(() => {
         setCurrentIndex(prev => prev + 1);
@@ -38,9 +38,9 @@ export default function CategoriesSection() {
     }
   };
 
-  const visibleItems = CATEGORIES_DATA.slice(currentIndex, currentIndex + 2);
+  const visibleItems = categories.slice(currentIndex, currentIndex + 2);
   const isPrevDisabled = currentIndex === 0;
-  const isNextDisabled = currentIndex >= CATEGORIES_DATA.length - 2;
+  const isNextDisabled = currentIndex >= categories.length - 2;
 
   return (
     <section className="py-16 md:pb-0 md:pt-20 bg-(--dark-gray) overflow-hidden">
@@ -88,13 +88,13 @@ export default function CategoriesSection() {
           isFading ? "opacity-0" : "opacity-100"
         )}>
           {visibleItems.map((cat) => {
-            const originalIndex = CATEGORIES_DATA.findIndex(c => c.id === cat.id);
+            const originalIndex = categories.findIndex(c => c.id === cat.id);
             const isLightGray = originalIndex % 2 === 0;
             
             return (
               <Link 
                 key={cat.id} 
-                href={cat.href} 
+                href={'#'} 
                 className={cn(
                   "group relative flex-1 aspect-[4/3] md:aspect-auto md:h-[600px] hover:opacity-95 transition-opacity duration-200 flex items-end",
                   isLightGray ? "bg-[#E7E7E3]" : "bg-[#FAFAFA]"

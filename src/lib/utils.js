@@ -8,16 +8,3 @@ export function formatPrice(price) {
     currency: 'USD',
   }).format(price);
 }
-
-export function slugify(text) {
-  return text
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .trim();
-}
-
-export function truncate(str, length = 100) {
-  if (str.length <= length) return str;
-  return str.slice(0, length) + '...';
-}
