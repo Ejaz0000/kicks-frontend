@@ -56,7 +56,7 @@ export default function ProductActions({ product }) {
         </button>
       </div>
 
-      <div className="pt-8 group">
+      <div className="pt-0 md:pt-6 group">
          <ProductDescription
           description={product.description}
           colorway={product.colorway}

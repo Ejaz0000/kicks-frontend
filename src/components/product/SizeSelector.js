@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
 export default function SizeSelector({ sizes = [], disabledSizes = [], onSelect }) {
-  // Let's set 38 as default as shown in design
+  
   const [selected, setSelected] = useState(38);
 
   const handleSelect = (size) => {

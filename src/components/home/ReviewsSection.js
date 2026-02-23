@@ -74,10 +74,10 @@ export default function ReviewsSection() {
   }, [itemsVisible]);
 
   return (
-    <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="pt-5 pb-11 md:pt-32 md:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <Container>
         
-        <SectionTitle title="REVIEWS" buttonText="SEE ALL" link="/" className="mb-12" />
+        <SectionTitle title="Reviews" buttonText="SEE ALL" link="/" className="mb-6 md:mb-12" />
         
         <div className="overflow-hidden -mx-2 md:-mx-3">
           <div 

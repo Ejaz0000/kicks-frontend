@@ -22,7 +22,7 @@ export default function ProductCard({ product, showBadge = false }) {
         </div>
       </div>
       <div className="mt-4">
-        <p className="font-semibold text-base md:text-2xl uppercase tracking-tight text-(--dark-gray) leading-[1.2] min-h-[58px]  line-clamp-2 mb-0">
+        <p className="font-semibold text-base md:text-2xl uppercase tracking-tight text-(--dark-gray) leading-[1.2] min-h-[38px] md:min-h-[58px]  line-clamp-2 mb-0">
           {product?.title}
         </p>
         <button className="mt-4 w-full bg-(--dark-gray) text-white h-10 md:h-12 rounded-lg transition-all hover:bg-black font-medium text-xs md:text-sm tracking-widest flex items-center justify-center gap-2 duration-200">

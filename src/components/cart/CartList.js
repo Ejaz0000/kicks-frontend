@@ -8,7 +8,7 @@ export default function CartList() {
 
   return (
     <div className="bg-[#FAFAFA] rounded-2xl p-4 md:p-6">
-      <div className="mb-8">
+      <div className="mb-4 md:mb-8">
         <h2 className="text-[20px] md:text-[32px] font-semibold text-(--dark-gray) mb-2">
           Your Bag
         </h2>

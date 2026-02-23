@@ -13,7 +13,7 @@ export default function OrderSummary() {
 
   return (
     <div className="bg-[#FAFAFA] lg:bg-transparent rounded-2xl px-4 py-4 md:px-0 md:py-6">
-      <h2 className="text-[20px] md:text-[32px] font-semibold text-(--dark-gray) mb-6">
+      <h2 className="text-[20px] md:text-[32px] font-semibold text-(--dark-gray) mb-4 md:mb-6">
         Order Summary
       </h2>
       <div className="space-y-4">

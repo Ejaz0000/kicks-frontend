@@ -38,7 +38,7 @@ export default function CartDetails() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-16 items-start pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-16 items-start pb-10">
           <div className="lg:col-span-8">
             <CartList />
           </div>

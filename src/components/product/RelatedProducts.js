@@ -31,7 +31,7 @@ export default function RelatedProducts({ products = [] }) {
   );
 
   return (
-    <section className="pt-24 md:pt-32 px-4 sm:px-6 lg:px-8">
+    <section className="pb-6 md:pb-16 px-4 sm:px-6 lg:px-8">
       <Container>
         <div className="flex items-center justify-between mb-8 md:mb-10">
           <h2 className="text-[24px] md:text-[48px] font-bold text-(--dark-gray) leading-tight">

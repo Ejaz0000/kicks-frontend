@@ -43,14 +43,14 @@ export default function CategoriesSection({categories}) {
   const isNextDisabled = currentIndex >= categories.length - 2;
 
   return (
-    <section className="py-16 md:pb-0 md:pt-20 bg-(--dark-gray) overflow-hidden">
+    <section className="mt-4 md:mt-32 py-6 md:pb-0 md:pt-24 bg-(--dark-gray) overflow-hidden">
       
 
       <div className='px-4 sm:px-6 lg:px-8'>
         <Container>
-        <div className="flex items-center md:items-end justify-between mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-[74px] text-white font-medium md:font-semibold tracking-tight leading-tight">
-            CATEGORIES
+        <div className="flex items-center md:items-end justify-between mb-6 md:mb-16">
+          <h2 className="text-2xl md:text-[74px] text-white font-medium md:font-semibold tracking-tight leading-tight md:uppercase">
+            Categories
           </h2>
           <div className="flex gap-2 md:gap-4 mb-0 md:mb-3">
             <button 

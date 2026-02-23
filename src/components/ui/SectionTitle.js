@@ -5,11 +5,11 @@ export default function SectionTitle({ title, buttonText, link, className }) {
   return (
     <div
       className={cn(
-        "flex flex-row items-center md:items-end justify-between gap-1 md:gap-0 mb-12",
+        "flex flex-row items-center md:items-end justify-between gap-1 md:gap-0",
         className,
       )}
     >
-      <h2 className="text-2xl md:text-[74px] text-(--dark-gray) font-medium md:font-semibold tracking-tight leading-tight max-w-[200px] md:max-w-2xl">
+      <h2 className="text-2xl md:text-[74px] text-(--dark-gray) font-medium md:font-semibold tracking-tight leading-tight max-w-[200px] md:max-w-2xl md:uppercase">
         {title}
       </h2>
      

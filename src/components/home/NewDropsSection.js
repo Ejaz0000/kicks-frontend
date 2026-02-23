@@ -6,9 +6,9 @@ import SectionTitle from '../ui/SectionTitle';
 
 export default function NewDropsSection({ products = [] }) {
   return (
-    <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8">
+    <section className="pt-6 md:pt-24 px-4 sm:px-6 lg:px-8">
       <Container>
-        <SectionTitle title="DON'T MISS OUT NEW DROPS" buttonText="SHOP NEW DROPS" link="/" className="mb-12" />
+        <SectionTitle title="Don’t miss out new drops" buttonText="SHOP NEW DROPS" link="/" className="mb-8" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} showBadge />

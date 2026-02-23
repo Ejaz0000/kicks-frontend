@@ -25,7 +25,7 @@ store.subscribe(() => {
     try {
       localStorage.setItem('kicks-cart', JSON.stringify(store.getState().cart));
     } catch {
-      // Ignore write errors
+      
     }
   }
 });

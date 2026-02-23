@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Search, User, ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useAppSelector } from '@/store/hooks';
 import { getTotalQuantity } from '@/store/slices/cartSlice';
@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import Container from './Container';
 import Image from '../common/Image';
+import { SearchIcon, UserIcon } from '../ui/Icons';
 
 const DROPDOWN_ITEMS = {
   Men: [
@@ -155,11 +156,12 @@ export default function Header() {
         {/* Right Icons */}
         <div className="flex items-center gap-3 md:gap-5">
           <button className="hidden md:flex p-2 hover:bg-gray-100 rounded-full transition-colors text-(--dark-gray)">
-            <Search className="w-4 h-4 md:w-6 md:h-6 stroke-[2.5px]" />
+            
+            <SearchIcon className="w-4 h-4 md:w-6 md:h-6" />
           </button>
           
           <Link href="/profile" className="p-2 hover:bg-gray-100 rounded-full transition-colors text-(--dark-gray)">
-            <User className="w-4 h-4 md:w-6 md:h-6 fill-black stroke-none" />
+            <UserIcon className="w-4 h-4 md:w-6 md:h-6" />
           </Link>
           
           <Link 
@@ -247,7 +249,7 @@ export default function Header() {
               href="/account"
               className="flex items-center gap-3 text-[16px] font-bold text-(--dark-gray) p-3 hover:bg-gray-50 rounded-xl transition-colors"
             >
-              <User className="w-5 h-5" />
+              <UserIcon className="w-5 h-5" />
               My Account
             </Link>
           </div>

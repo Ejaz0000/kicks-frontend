@@ -27,10 +27,10 @@ export default function HeroSection() {
     console.log('Main image updated:', mainImage);
   }, [mainImage]);
   return (
-    <section className="pt-6 pb-16 px-4 sm:px-6 lg:px-8">
+    <section className="pt-6 px-4 sm:px-6 lg:px-8">
       <Container>
-        <h1 className="text-center w-full font-bold leading-[0.85] tracking-tight 
-             text-[clamp(2.5rem,16.6vw,14.6rem)]! text-(--dark-gray) mb-12">
+        <h1 className="text-center w-full font-bold leading-[0.85] tracking-tight text-[clamp(2.5rem,16.2vw,14.6rem)]
+             md:text-[clamp(2.5rem,16.6vw,14.6rem)] text-(--dark-gray) mb-10 md:mb-12">
             DO IT <span className="text-(--blue-primary)">RIGHT</span>
         </h1>
 

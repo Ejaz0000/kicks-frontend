@@ -13,13 +13,13 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="pt-16 md:pt-20 px-4 sm:px-6 lg:px-8">
+    <section className=" px-4 sm:px-6 lg:px-8">
       <Container>
         <div className="relative bg-(--blue-primary) rounded-t-[24px] md:rounded-t-[48px] overflow-hidden px-4 md:px-18 pt-4 md:pt-16 pb-18 md:pb-24  flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 md:gap-16">
           
           <div className="relative z-10 w-full lg:max-w-[500px]">
-            <h2 className="text-[32px] md:text-[48px] font-semibold text-white leading-[1.1] tracking-tight mb-4 max-w-[326px] md:max-w-[510px] lowercase md:uppercase">
-              JOIN OUR KICKSPLUS CLUB & GET 15% OFF
+            <h2 className="text-[32px] md:text-[48px] font-semibold text-white leading-[1.1] tracking-tight mb-4 max-w-[326px] md:max-w-[510px] md:uppercase">
+              Join our KicksPlus Club & get 15% off
             </h2>
             <p className="text-(--light-gray) sub-text text-base md:text-xl font-semibold mb-8">
               Sign up for free! Join the community.
